@@ -3,21 +3,8 @@
 //
 #include "gtest/gtest.h"
 #include "../src/crypto-hash/sha256.h"
+#include "util-test.h"
 using safeheron::hash::CSHA256;
-
-static const char *sha2_hex_digits = "0123456789abcdef";
-
-void bytes2hex(const uint8_t * input, size_t input_len, char * output, size_t output_len){
-    assert(output_len == 2 * input_len + 1);
-    const uint8_t *d = input;
-    char *buffer = output;
-    for (int i = 0; i < input_len; i++) {
-        *buffer++ = sha2_hex_digits[(*d & 0xf0) >> 4];
-        *buffer++ = sha2_hex_digits[*d & 0x0f];
-        d++;
-    }
-    *buffer = (char)0;
-}
 
 std::vector<std::vector<std::string>> test_case_for_sha256 = {
         {
@@ -32,10 +19,9 @@ void run_case(const uint8_t * input, size_t  input_len, const char * expected_di
     sha256.Write(input, input_len);
     sha256.Finalize(digest);
 
-    char digest_hex[CSHA256::OUTPUT_SIZE * 2 + 1];
-    bytes2hex(digest, CSHA256::OUTPUT_SIZE, digest_hex, CSHA256::OUTPUT_SIZE * 2 + 1);
+    std::string digest_hex = bytes2hex(digest, CSHA256::OUTPUT_SIZE);
 
-    EXPECT_TRUE(strcmp(expected_digest_hex, digest_hex) == 0);
+    EXPECT_TRUE(strcmp(expected_digest_hex, digest_hex.c_str()) == 0);
 }
 
 TEST(HASH, SHA256)
