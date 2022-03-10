@@ -47,5 +47,7 @@ install(
         DIRECTORY src/
         DESTINATION include/safeheron
         FILES_MATCHING PATTERN "*.h"
+        EXCLUDE PATTERN "byteswap.h"
+        EXCLUDE PATTERN "endian.h"
 )
 
