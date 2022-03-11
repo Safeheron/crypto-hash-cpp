@@ -7,10 +7,6 @@ set(config_basename "${PROJECT_NAME}Config")
 set(config_filename "${config_basename}.cmake")
 set(version_filename "${config_basename}Version.cmake")
 
-message(STATUS "config_basename = ${config_basename}")
-message(STATUS "config_filename = ${config_filename}")
-message(STATUS "version_filename = ${version_filename}")
-
 write_basic_package_version_file(
         ${version_filename}
         COMPATIBILITY SameMajorVersion

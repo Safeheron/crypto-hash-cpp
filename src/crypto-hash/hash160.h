@@ -18,21 +18,11 @@ private:
 public:
     static const size_t OUTPUT_SIZE = CRIPEMD160::OUTPUT_SIZE;
 
-    void Finalize(unsigned char hash[OUTPUT_SIZE]) {
-        unsigned char buf[CSHA256::OUTPUT_SIZE];
-        sha.Finalize(buf);
-        CRIPEMD160().Write(buf, CSHA256::OUTPUT_SIZE).Finalize(hash);
-    }
+    void Finalize(unsigned char hash[OUTPUT_SIZE]);
 
-    CHash160& Write(const unsigned char *data, size_t len) {
-        sha.Write(data, len);
-        return *this;
-    }
+    CHash160& Write(const unsigned char *data, size_t len);
 
-    CHash160& Reset() {
-        sha.Reset();
-        return *this;
-    }
+    CHash160& Reset();
 };
 
 
