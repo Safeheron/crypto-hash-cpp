@@ -109,12 +109,12 @@ int main(){
 >- Finalize(unsigned char hash[OUTPUT_SIZE]) - Output the digest.
 >- Reset() - Reset the hash status.
 
-#### Class - safeheron::hash::CHMAC_SHA256
+#### Class - safeheron::hash ::CHMAC_SHA256
 >- CHMAC_SHA256(const unsigned char* key, size_t keylen) - Constructor with key.
 >- Write(const unsigned char *data, size_t len) - Update hash status with input data.
 >- Finalize(unsigned char hash[OUTPUT_SIZE]) - Output the digest.
 
-#### Class - safeheron::hash::CHMAC_SHA512
+#### Class - safeheron::hash ::CHMAC_SHA512
 >- CHMAC_SHA512(const unsigned char* key, size_t keylen) - Constructor with key.
 >- Write(const unsigned char *data, size_t len) - Update hash status with input data.
 >- Finalize(unsigned char hash[OUTPUT_SIZE]) - Output the digest.
