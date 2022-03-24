@@ -7,18 +7,14 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
 
 find_package(CryptoHash REQUIRED)
-if(CryptoHash_FOUND )
-    MESSAGE(STATUS "Found CryptoHash!")
-endif(CryptoHash_FOUND )
 
-add_executable(hash-test hash-test.cpp)
-target_include_directories(hash-test PUBLIC
+add_executable(example example.cpp)
+target_include_directories(example PRIVATE
         ${CryptoHash_INCLUDE_DIRS}
-        ${OPENSSL_INCLUDE_DIR}
         ${GTEST_INCLUDE_DIRS}
         )
 
-target_link_libraries( hash-test PUBLIC
+target_link_libraries(example PRIVATE
         CryptoHash
         ${GTEST_BOTH_LIBRARIES}
         pthread )
