@@ -73,37 +73,37 @@ int main(){
 
 # Usage
 
-#### Class - safeheron::hash::CSHA1
+#### Class - safeheron::hash ::CSHA1
 >- CSHA1() - Constructor
 >- Write(const unsigned char *data, size_t len) - Update hash status with input data.
 >- Finalize(unsigned char hash[OUTPUT_SIZE]) - Output the digest.
 >- Reset() - Reset the hash status.
 
-#### Class - safeheron::hash::CSHA256
+#### Class - safeheron::hash ::CSHA256
 >- CSHA256() - Constructor
 >- Write(const unsigned char *data, size_t len) - Update hash status with input data.
 >- Finalize(unsigned char hash[OUTPUT_SIZE]) - Output the digest.
 >- Reset() - Reset the hash status.
 
-#### Class - safeheron::hash::CSHA512
+#### Class - safeheron::hash ::CSHA512
 >- CSHA512() - Constructor
 >- Write(const unsigned char *data, size_t len) - Update hash status with input data.
 >- Finalize(unsigned char hash[OUTPUT_SIZE]) - Output the digest.
 >- Reset() - Reset the hash status.
 
-#### Class - safeheron::hash::CRIPEMD160
+#### Class - safeheron::hash ::CRIPEMD160
 >- CRIPEMD160() - Constructor
 >- Write(const unsigned char *data, size_t len) - Update hash status with input data.
 >- Finalize(unsigned char hash[OUTPUT_SIZE]) - Output the digest.
 >- Reset() - Reset the hash status.
 
-#### Class - safeheron::hash::Hash160
+#### Class - safeheron::hash ::Hash160
 >- CHash160() - Constructor
 >- Write(const unsigned char *data, size_t len) - Update hash status with input data.
 >- Finalize(unsigned char hash[OUTPUT_SIZE]) - Output the digest.
 >- Reset() - Reset the hash status.
 
-#### Class - safeheron::hash::Hash256
+#### Class - safeheron::hash ::Hash256
 >- CHash256() - Constructor
 >- Write(const unsigned char *data, size_t len) - Update hash status with input data.
 >- Finalize(unsigned char hash[OUTPUT_SIZE]) - Output the digest.
