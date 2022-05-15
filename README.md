@@ -12,9 +12,10 @@ Linux and Mac are supported now.  After obtaining the Source, have a look at the
 git clone https://github.com/safeheron/crypto-hash-cpp.git
 cd crypto-hash-cpp
 mkdir build && cd build
-cmake ..
-cmake
-make test
+# Turn on the switcher to enable tests; by default, turn off it if you don't wanna to build the test cases.
+cmake .. -DENABLE_TESTS=ON
+make
+make test # If you set ENABLE_TESTS ON
 sudo make install
 ```
 
