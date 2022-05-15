@@ -7,12 +7,10 @@ option(ENABLE_ASSEMBLE "Enable assemble" OFF)
 if (NOT ${ENABLE_ASSEMBLE})
     link_libraries(CryptoHash
             ${GTEST_BOTH_LIBRARIES}
-            ${PROTOBUF_LIBRARY_DIRS}
             pthread )
 else()
     link_libraries(${CMAKE_PROJECT_NAME}
             ${GTEST_BOTH_LIBRARIES}
-            ${PROTOBUF_LIBRARY_DIRS}
             pthread )
 endif()
 
