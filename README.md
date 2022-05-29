@@ -33,41 +33,39 @@ To build crypto-bn-cpp from source, follow the BUILDING guide.
 The canonical way to discover dependencies in CMake is the find_package command.
 
 ```shell
-project(XXXX)
+cmake_minimum_required(VERSION 3.10)
+project(example)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE "Release")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
 
 find_package(CryptoHash REQUIRED)
 
-add_executable(${PROJECT_NAME} XXXX.cpp)
-target_include_directories(${PROJECT_NAME} PRIVATE
+add_executable(example example.cpp)
+target_include_directories(example PRIVATE
         ${CryptoHash_INCLUDE_DIRS}
         )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE
+target_link_libraries(example PRIVATE
         CryptoHash
-        )
+        pthread )
 ```
 
 ## Example
 
 ```c++
-#include "crypto-hash/sha256.h"
+#include <crypto-hash/sha256.h>
 
 using safeheron::hash::CSHA256;
 
-int main(){
-    std::string input = "";
-    std::string expected_digest_hex = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+int main(int argc, char **argv) {
+    const char *input = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     CSHA256 sha256;
     uint8_t digest[CSHA256::OUTPUT_SIZE];
-    sha256.Write((uint_8 *)input.c_str(), input.size());
+    sha256.Write((const uint8_t *)input, strlen(input));
     sha256.Finalize(digest);
-
-    std::string digest_hex = bytes2hex(digest, CSHA256::OUTPUT_SIZE);
-    EXPECT_TRUE(strcmp(expected_digest_hex, digest_hex.c_str()) == 0);
-    
     return 0;
 }
 ```

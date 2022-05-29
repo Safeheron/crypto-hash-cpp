@@ -11,10 +11,8 @@ find_package(CryptoHash REQUIRED)
 add_executable(example example.cpp)
 target_include_directories(example PRIVATE
         ${CryptoHash_INCLUDE_DIRS}
-        ${GTEST_INCLUDE_DIRS}
         )
 
 target_link_libraries(example PRIVATE
         CryptoHash
-        ${GTEST_BOTH_LIBRARIES}
         pthread )
