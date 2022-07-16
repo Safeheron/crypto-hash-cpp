@@ -4,6 +4,11 @@
 #include "gtest/gtest.h"
 #include "../src/crypto-hash/sha256.h"
 #include "util-test.h"
+
+#ifdef ENABLE_ASSEMBLE
+#include <google/protobuf/stubs/common.h>
+#endif
+
 using safeheron::hash::CSHA256;
 
 std::vector<std::vector<std::string>> test_case_for_sha256 = {
@@ -37,5 +42,10 @@ TEST(HASH, SHA256)
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     int ret = RUN_ALL_TESTS();
+
+#ifdef ENABLE_ASSEMBLE
+    google::protobuf::ShutdownProtobufLibrary();
+#endif
+
     return ret;
 }
