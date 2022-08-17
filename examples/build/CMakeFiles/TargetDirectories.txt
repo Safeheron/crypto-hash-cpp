@@ -1,3 +1,0 @@
-/Users/hejianhong/Projects/ByTopic/iString_crypto/crypto-hash-cpp/examples/build/CMakeFiles/example.dir
-/Users/hejianhong/Projects/ByTopic/iString_crypto/crypto-hash-cpp/examples/build/CMakeFiles/edit_cache.dir
-/Users/hejianhong/Projects/ByTopic/iString_crypto/crypto-hash-cpp/examples/build/CMakeFiles/rebuild_cache.dir
