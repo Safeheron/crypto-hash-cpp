@@ -8,6 +8,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         crypto-hash/chacha20.cpp
         crypto-hash/hmac_sha256.cpp
         crypto-hash/hmac_sha512.cpp
+        crypto-hash/safe_hash256.cpp
+        crypto-hash/safe_hash512.cpp
         )
 
 # Check if file endian.h, byteswap.h, sys/endian.h exist.

@@ -16,3 +16,9 @@ endif()
 
 add_executable(hash-test hash-test.cpp)
 add_test(NAME hash-test COMMAND hash-test)
+
+add_executable(safe-hash256-test safe-hash256-test.cpp)
+add_test(NAME safe-hash256-test COMMAND safe-hash256-test)
+
+add_executable(safe-hash512-test safe-hash512-test.cpp)
+add_test(NAME safe-hash512-test COMMAND safe-hash512-test)
